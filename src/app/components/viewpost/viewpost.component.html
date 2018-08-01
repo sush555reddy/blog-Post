@@ -1,0 +1,43 @@
+<div style="box-shadow: 10px 10px 20px grey;" class="panel panel-primary">
+  <div class="panel panel-heading">
+    View Post
+  </div>
+  <div class="panel panel-body">
+    <h3>Post Title:
+      <em>{{post.title}}</em>
+    </h3>
+    <br>
+    <h4>
+      <strong>Post Description:</strong> {{post.description}}</h4>
+    <br>
+    <button (click)="viewComments(id)" class="btn btn-primary">View comments
+      <i class="glyphicon glyphicon-comment"></i>
+    </button>
+    <button (click)="like(id,{user:cUname})" class="btn btn-primary" title="{{likesss}}">Like
+      <i class="glyphicon glyphicon-thumbs-up glyphyicon-lg"></i>
+      <span class="badge">{{lData.nLikes}}</span>
+    </button>
+    <button [routerLink]="['/posts/edit',id]" class="btn btn-warning">Edit Post
+      <i class="glyphicon glyphicon-edit"></i>
+    </button>
+
+
+    <button (click)="deletePost(id)" class="btn btn-danger">Delete Post
+      <i class="glyphicon glyphicon-trash"></i>
+    </button>
+    <div class="form-group" style="margin:10px">
+      <input class="form-control" type="text" name="comment" placeholder="write a comment..." [(ngModel)]="comments">
+      <button (click)="addComment({comments:comments},id)" style="margin-top:10px" class="btn btn-primary">Add Comment
+        <i class="glyphicon glyphicon-plus"></i>
+      </button>
+    </div>
+    <div *ngIf="displayComments">
+      <h3>Comments:</h3>
+      <hr>
+      <div *ngFor="let comments of postComments">
+        <p>{{comments.comments}}</p>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

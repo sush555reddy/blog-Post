@@ -1,0 +1,22 @@
+<button  [routerLink]="['/posts',postId]" style="margin:10px" class="btn btn-primary"
+     >View Post <i class="glyphicon glyphicon-zoom-in"></i></button>
+    <button (click)="listVC(postId)" style="margin:10px" class="btn btn-primary">View Comments <i class="glyphicon glyphicon-comment"></i></button>
+    <button (click)="likeBtn(postId,{user:cUname})" class="btn btn-primary">Like  
+      <i class="glyphicon glyphicon-thumbs-up glyphyicon-lg">
+
+      </i> <span class="badge">{{lData.likess}}</span></button>
+      <div class="form-group" style="margin:10px">
+
+        <input class="form-control" type="text" name="comment" placeholder="write a comment..." [(ngModel)]="comments">
+        <button (click)="addComm(comments,postId)" id="{{postId}}" style="margin-top:10px" class="btn btn-primary">Add Comment  <i class="glyphicon glyphicon-plus"></i></button>
+        <div *ngIf="displayComments">
+            <h3>Comments:</h3>
+            <hr>
+            <div *ngFor="let comments of listComm">
+              <p>{{comments.comments}}</p>
+              <hr>
+            </div>
+          </div>
+      </div>
+     
+     
