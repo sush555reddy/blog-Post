@@ -1,0 +1,18 @@
+<div class="panel panel-primary">
+    <div class="panel panel-heading">Register</div>
+    <div class="panel panel-body">
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="username"
+         name="username" [(ngModel)]="username">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" placeholder="password"
+         name="password" [(ngModel)]="password">
+      </div>
+      <button class="btn btn-success" 
+      (click)="register({username:username,password:password})">
+      Register</button>
+    </div>
+  </div>
+  
+  

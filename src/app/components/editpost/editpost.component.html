@@ -1,0 +1,12 @@
+<div class="panel panel-primary">
+  <div class="panel panel-heading">
+    Edit Post
+  </div>
+  <div class="panel panel-body">
+    <label>Post Title</label>
+    <input type="text" placeholder="Enter page title" name="title" class="form-control" [(ngModel)]="post.title"><br>
+      <label>Post Description</label>
+      <textarea name="description" placeholder="Enter post description" rows="5" class="form-control" [(ngModel)]="post.description"></textarea><br>
+        <button (click)="updatePost(post,id)" class="btn btn-primary">Update Post</button>
+  </div>
+</div>
