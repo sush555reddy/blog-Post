@@ -8,6 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+<<<<<<< HEAD
   loggedIn = false;
 
 checkUser:any;
@@ -22,6 +23,13 @@ checkUser:any;
     });
   }
 
+=======
+checkUser:any;
+  constructor(private authService:AuthService, private cookieService:CookieService) { }
+  ngOnInit() {
+    this.checkUser=this.cookieService.get('token')
+  }
+>>>>>>> 3b508d7150994597fdf97cf9e546835667d968ed
   logout(){
     this.authService.logout();
   }

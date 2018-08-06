@@ -4,7 +4,10 @@ import {RequestOptions,Headers} from '@angular/http';
 import {Observable} from 'rxjs/observable';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+<<<<<<< HEAD
 import { Subject} from 'rxjs';
+=======
+>>>>>>> 3b508d7150994597fdf97cf9e546835667d968ed
 
 
 // const httpOptions={
@@ -13,8 +16,11 @@ import { Subject} from 'rxjs';
 
 @Injectable()
 export class AuthService {
+<<<<<<< HEAD
 
   status = new Subject<boolean>();
+=======
+>>>>>>> 3b508d7150994597fdf97cf9e546835667d968ed
   
 domain="http://localhost:8080";
 authToken;
@@ -40,21 +46,32 @@ options;
         this.cookieService.set('token',this.token);
         this.cookieService.set('uname',this.uname);
         this.router.navigate(["/home"]);
+<<<<<<< HEAD
         this.notifyNavbar(data.isLoggedIn)
       }
       else{
         this.notifyNavbar(data.isLoggedIn)
+=======
+      }
+      else{
+>>>>>>> 3b508d7150994597fdf97cf9e546835667d968ed
   console.log(data);
       }
     })
   }
 
+<<<<<<< HEAD
   notifyNavbar(loggedIn:boolean){
     this.status.next(loggedIn);
   }
 
   loadToken(){
     return this.cookieService.get('token')
+=======
+
+  loadToken(){
+return this.cookieService.get('token')
+>>>>>>> 3b508d7150994597fdf97cf9e546835667d968ed
   }
 
 
@@ -70,10 +87,17 @@ options;
 
 
 logout(){
+<<<<<<< HEAD
   this.cookieService.delete('token');
   this.cookieService.delete('uname');``
   this.token=null;
   this.notifyNavbar(false);
+=======
+  console.log("hello")
+  this.cookieService.delete('token');
+  this.cookieService.delete('uname');``
+  this.token=null;
+>>>>>>> 3b508d7150994597fdf97cf9e546835667d968ed
   
 
 }
